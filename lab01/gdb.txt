@@ -1,9 +1,9 @@
-1.
-2.
-3.
-4.
-5.
-6.
-7.
-8.
-9.
+1.run<argument1><argument2>....
+2.break-название метода-номер строки
+3.next
+4.step
+5.continue
+6.print<переменная или выражение>
+7.display<переменная>
+8.info locals
+9.q
