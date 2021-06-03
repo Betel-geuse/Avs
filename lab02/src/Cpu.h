@@ -19,7 +19,16 @@ public:
 
     void ProcessInstruction()
     {
-        /* YOUR CODE HERE */
+        Word i = _mem.Request(_ip);
+        InstructionPtr instr_ptr = _decoder.Decode(i);
+        _rf.Read(instr_ptr);
+        _csrf.Read(instr_ptr);
+        _exe.Execute(instr_ptr, _ip);
+        _mem.Request(instr_ptr);
+        _rf.Write(instr_ptr);
+        _csrf.Write(instr_ptr);
+        _csrf.InstructionExecuted();
+        _ip = instr_ptr->_nextIp;
     }
 
     void Reset(Word ip)
